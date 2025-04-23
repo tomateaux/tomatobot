@@ -35,7 +35,7 @@ def get_by_session_id(session_id: str) -> BaseChatMessageHistory:
 
 # LLMモデルに渡すプロンプト
 prompt = ChatPromptTemplate.from_messages([
-    ("system", "You're good at {ability}."),
+    ("system", "You are an assistant who is good at {ability}."),
     ("system", "The following are past messages, which you should remember and refer to if relevant:\n{context}"),
     MessagesPlaceholder(variable_name="history"),
     ("human", "{question}"),
