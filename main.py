@@ -110,7 +110,12 @@ def respond(message, history):
     return result.content
 
 # チャットUIの構築
-demo = gr.ChatInterface(fn=respond, type="messages", title="tomatobot")
+demo = gr.ChatInterface(
+    fn=respond,
+    type="messages",
+    theme="soft",
+    title="tomatobot"
+)
 
 # アプリ終了時に、FAISSの会話履歴を永続保存
 @atexit.register
